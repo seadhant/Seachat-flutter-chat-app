@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">842650919229-8ikstc24oqtb4n4svp928p1h7orqbcg1.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://sea-chat-b6222.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">842650919229</string>
+    <string name="google_api_key" translatable="false">AIzaSyALgpzV_M4G8FktvZ8L42yCtuhh0Z5E_To</string>
+    <string name="google_app_id" translatable="false">1:842650919229:android:550dc5071a312283c72554</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyALgpzV_M4G8FktvZ8L42yCtuhh0Z5E_To</string>
+    <string name="google_storage_bucket" translatable="false">sea-chat-b6222.appspot.com</string>
+    <string name="project_id" translatable="false">sea-chat-b6222</string>
+</resources>

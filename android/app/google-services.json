@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "842650919229",
+    "firebase_url": "https://sea-chat-b6222.firebaseio.com",
+    "project_id": "sea-chat-b6222",
+    "storage_bucket": "sea-chat-b6222.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:842650919229:android:77df1a16eb8e73f3c72554",
+        "android_client_info": {
+          "package_name": "com.corona.flutterchatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "842650919229-8ikstc24oqtb4n4svp928p1h7orqbcg1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALgpzV_M4G8FktvZ8L42yCtuhh0Z5E_To"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "842650919229-8ikstc24oqtb4n4svp928p1h7orqbcg1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:842650919229:android:550dc5071a312283c72554",
+        "android_client_info": {
+          "package_name": "com.sidhant.flutterchatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "842650919229-8ikstc24oqtb4n4svp928p1h7orqbcg1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALgpzV_M4G8FktvZ8L42yCtuhh0Z5E_To"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "842650919229-8ikstc24oqtb4n4svp928p1h7orqbcg1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
