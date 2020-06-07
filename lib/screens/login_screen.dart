@@ -11,7 +11,7 @@ class LoginScreen extends StatefulWidget {
   _LoginScreenState createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStateMixin {
 
   final _auth = FirebaseAuth.instance;
 
@@ -19,6 +19,9 @@ class _LoginScreenState extends State<LoginScreen> {
 
   String email;
   String password;
+
+
+
 
 
   @override

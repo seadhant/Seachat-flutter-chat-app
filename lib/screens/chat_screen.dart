@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutterchatapp/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-
+import 'add_task_screen.dart';
+import 'package:flutterchatapp/components/theme.dart';
+import 'package:android_alarm_manager/android_alarm_manager.dart';
 
 
 final _firestore = Firestore.instance;
@@ -42,6 +44,20 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          showModalBottomSheet(context: context,isScrollControlled: true,
+            builder: (context) => SingleChildScrollView(
+              child: Container(
+                padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+                child: AddNotification(),
+              ),
+            ),
+          );
+        },
+        backgroundColor: Colors.purple[700],
+        child: Icon(Icons.add,color: Colors.white,),
+      ),
       appBar: AppBar(
         leading: null,
         actions: <Widget>[
@@ -52,8 +68,8 @@ class _ChatScreenState extends State<ChatScreen> {
                 Navigator.pop(context);
               }),
         ],
-        title: Text('⚡️Chat'),
-        backgroundColor: Colors.lightBlueAccent,
+        title: Text('🌊  ️Chat'),
+        backgroundColor: Color(0xFF031f4b),
       ),
       body: SafeArea(
         child: Column(
@@ -66,6 +82,22 @@ class _ChatScreenState extends State<ChatScreen> {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
+
+                  FlatButton(
+                    onPressed: () {
+                      if (messageText != null){
+                      messageTextController.clear();
+                      _firestore.collection('messages').add({
+                        'text': messageText,
+                        'sender': loggedInUser.email,
+                        'date' : DateTime.now().toIso8601String().toString(),
+                      });
+                    }},
+                    child: Text(
+                      'Send',
+                      style: kSendButtonTextStyle,
+                    ),
+                  ),
                   Expanded(
                     child: TextField(
                       controller: messageTextController,
@@ -73,20 +105,6 @@ class _ChatScreenState extends State<ChatScreen> {
                         messageText = value;
                       },
                       decoration: kMessageTextFieldDecoration,
-                    ),
-                  ),
-                  FlatButton(
-                    onPressed: () {
-                      messageTextController.clear();
-                      _firestore.collection('messages').add({
-                        'text': messageText,
-                        'sender': loggedInUser.email,
-                        'date' : DateTime.now().toIso8601String().toString(),
-                      });
-                    },
-                    child: Text(
-                      'Send',
-                      style: kSendButtonTextStyle,
                     ),
                   ),
                 ],
@@ -150,6 +168,7 @@ class MessageBubble extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
+
       padding: EdgeInsets.all(10.0),
       child: Column(
         crossAxisAlignment:
